@@ -342,9 +342,8 @@
     font-size: revert;
     }
     .registercontainer .contentBx .formBx {
-      width: 100%;
-      padding: 40px;
-      margin: 50px;
-      background: rgb(255 255 255 / 1);
+      width: 90%;
+    margin: 0;
+    padding: 0px;
   }
 }

@@ -346,4 +346,9 @@
     margin: 0;
     padding: 0px;
   }
+  .container .contentBx .formBx{
+    width: 90%;
+    margin: 0;
+    padding: 0px;
+}
 }

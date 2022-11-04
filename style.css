@@ -2,15 +2,57 @@
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
+/* 
+Main container consists of image and side input fields
+Used in changepin, login, deposit,withdraw
+*/
 .container{
     position: relative;
     width: 100%;
     height: 90vh;
+    top: 25px;
+    z-index: 1;
     display: flex;
 }
 
+/* 
+top blue head bar
+Used in changepin, login, deposit,withdraw
+*/
+.head{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15%;
+  background: #03203C;
+}
+
+/* 
+Second top blue head with heading on it
+used in register,statements,transactions,index/main-front-page
+*/
+
+.mainhead{
+  display: block;
+  width: 100%;
+  background: #03203C;
+}
+.mainhead h1{
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5em;
+  padding: 20px 0;
+}
+
+
+/* Side image container/div width and height settings 
+Used in changepin, login, deposit,withdraw 
+*/
 .container .imgBx{
     position: relative;
     width: 50%;
@@ -26,6 +68,9 @@
     object-fit: contain;
 }
 
+/* contentbx contains input fields
+Used in changepin, login, deposit,withdraw
+*/
 .container .contentBx{
     display: flex;
     align-items: center;
@@ -35,10 +80,17 @@
     margin-top: 30px;
 }
 
+/* in contentbx, formbx contains all the input fields
+Used in changepin, login, deposit,withdraw
+*/
 .container .contentBx .formBx{
     width: 50%;
 }
 
+
+/* in formbx top heading styling. 
+Used in changepin, login, deposit,withdraw,
+ */
 .container .contentBx .formBx h2{
     color: #03203C;
     font-weight: 600;
@@ -49,10 +101,16 @@
     display: inline-block;
     letter-spacing: 1px;
 }
+
 .container .contentBx .formBx .inputfield{
     margin-bottom: 20px;
 
 }
+
+/* 
+input fields labels/span
+Used in changepin, login, deposit,withdraw,register
+ */
 .container .contentBx .formBx .inputfield span{
     font-size: 16px;
     margin-bottom: 5px;
@@ -61,6 +119,11 @@
     font-weight: 300px;
     letter-spacing: 1px;
 }
+
+/* 
+input field styling
+Used in changepin, login, deposit,withdraw,register
+ */
 .container .contentBx .formBx .inputfield input
 {
     width: 100%;
@@ -74,6 +137,11 @@
     background: transparent;
     border-radius: 5px;
 }
+
+/* 
+submit buttn styling
+Used in changepin, login, deposit,withdraw,register
+*/
 .container .contentBx .formBx .inputfield input[type="submit"]{
     background: #03203C;
     color: #fff;
@@ -88,28 +156,23 @@
     background: #758283;
 }
 
+/* Login form para tag 'Dont have account' */
 .container .contentBx .formBx .inputfield p{
     color: #758283;
  
 }
+
+/* login form anchor tag 'register' */
 .container .contentBx .formBx .inputfield p a{
     color: #03203C;
 }
-.head{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 15%;
-    background: #03203C;
-}
-.container{
-    top: 25px;
-    z-index: 1;
-}
 
-/* Register */
 
+
+/* 
+In Register main container/div
+which includes mainhead with heading and formbx with inputfields 
+*/
 .registercontainer{
     position: relative;
     width: 100%;
@@ -143,6 +206,9 @@
 .registercontainer .contentBx .formBx .inputfield{
     margin-bottom: 20px;
 
+}
+.registercontainer .contentBx .formBx .inputfield.accntNumField {
+    pointer-events: none;
 }
 .registercontainer .contentBx .formBx .inputfield span{
     font-size: 16px;
@@ -180,34 +246,22 @@
 }
 
 
-
-/* Main Page Boxex */
-
-
-.mainhead{
-    display: block;
-    width: 100%;
-    background: #03203C;
-}
-.mainhead h1{
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5em;
-    padding: 20px 0;
-}
-
-.cardBox, .bio{
+/* 
+main page bio of user and maiin 6 boxes
+*/
+/* displaying 3 in each row using grid */
+.cardBox, 
+.bio{
     position: relative;
     padding: 10px 27px;
     padding-right: 20px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 30px;
-  }
+}
   
-  .cardBox .card {
+  /* Each card  */
+.cardBox .card {
     background: #03203C;
     padding: 30px;
     display: flex;
@@ -215,18 +269,27 @@
     align-items: center;
     cursor: pointer;
     box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-  }
+    user-select: none;
+}
   
-  .bio {
+  /* 
+  bio of user
+  used in main page, statements and transactions
+  */
+.bio {
     color: #242B2E;
     font-size: 2.1em;
     margin-top: 5px;
-  }
-  .bio p{
+}
+
+.bio p{
     margin-left: 100px;
-  }
-  
-  .cardBox .card  a{
+}
+
+/* 
+anchor tag placed on icon and name of card to switch pages
+*/
+.cardBox .card  a{
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -234,44 +297,46 @@
     flex-direction: column;
     font-size: 2.5em;
     color: white;
-  }
+}
   
 
 .cardBox .card:hover{
     box-shadow: 5px 10px rgb(139, 138, 138);
-
+    transition: 0.3s ease;
   }
   
 
   /* 
   Transactions Table
   */
-  
-  .totaltransactions {
+  /* 
+  Transacation main div
+  */
+.totaltransactions {
     padding: 5px 20px 5px 28px
-  }
+}
   
-  table {
+table {
     border-collapse: collapse;
     width: 100%;
-  }
+}
   
-  th,
-  td {
+th,
+td {
     text-align: left;
     padding: 8px;
-  }
+}
   
-  tr:nth-child(even) {
+tr:nth-child(even) {
     background-color: #f2f2f2
-  }
+}
   
-  th {
+th {
     background-color: #03203C;
     color: white;
-  }
+}
 
-  .transactionbutton input[type="submit"]{
+.transactionbutton input[type="submit"]{
     background: #03203C;
     color: #fff;
     outline: none;
@@ -280,16 +345,17 @@
     padding: 10px;
     margin: 10px 27px;
     cursor: pointer;
-  } 
+} 
 
-  /* Statement */
-  .statement{
+
+  /* Statements styling */
+.statement{
     font-size: 1.5em;
-  }
+}
   .statementbuttons{
     display: flex;
-  }
-  .printbutton input[type="submit"]{
+}
+.printbutton input[type="submit"]{
     margin: 10px 0;
     background: #03203C;
     color: #fff;
@@ -298,60 +364,65 @@
     font-weight: 500;
     padding: 10px;
     cursor: pointer;
-  }
+}
   
-
+/* 
+Media queries to display responsive
+768 px or less the all content will be adjusted
+*/
 
 @media (max-width: 768px) {
-    .container .imgBx {
-        position: absolute;
-        top: 0;
-        left: 0;
+
+  /* setting imgbx container position absolute and hide image */
+.container .imgBx {
+     position: absolute;
+}
+.container .imgBx img{
+     display: none;
+}
+
+/* setting full width of content box 
+used n login ,deposit withdraw , changepin
+*/
+.container .contentBx{
         width: 100%;
-        height: 100%;
-    }
-    .container .imgBx img{
-        display: none;
-    }
-    .container .contentBx{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-    }
-    .container .contentBx .formBx{
+}
+
+.container .contentBx .formBx{
        width: 100%;
        padding: 40px;
        margin: 50px;
-       background: rgb(255 255 255 / 1);
-    }
-    .cardBox, .bio{
-      position: relative;
-      padding: 10px 27px;
-      padding-right: 20px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 30px;
-    }
 }
 
+/* settings carbox to 2 boxes per page as well as biio */
+.cardBox, .bio{
+      grid-template-columns: repeat(2, 1fr);
+}
+
+}
+
+/* 
+600px or less
+*/
+
 @media (max-width: 600px) {
+
+  /* setting cardbox to 1 box each per page */
   .cardBox, 
   .bio{
-    position: relative;
-    padding: 10px 27px;
-    padding-right: 20px;
-    display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-gap: 30px;
   }
+
+  /* adjusting font size of heading in main head used in ststments , main page, transaction , register page */
   .mainhead h1{
     font-size: revert;
   }
 }
 
+
+/* 
+mobile view
+*/
 @media (max-width: 480px) {
 
   
@@ -363,15 +434,28 @@
     font-size: 25px;
     }
 
+    /* width of register form */
     .registercontainer .contentBx .formBx {
     width: 90%;
     margin: 0;
     padding: 0px;
     }
 
+    /* adjusting with of login, change pin deposit withdraw input fields */
   .container .contentBx .formBx{
-    width: 90%;
-    margin: 0;
-    padding: 0px;
+        width: 90%;
+        margin: 0;
+        padding: 0px;
+    }
+    .totaltransactions {
+        overflow: hidden;
+        overflow-x: auto;
+    }
+    .totaltransactions table {
+        width: 500px;
+    }
+
+    .cardBox, .bio {
+        padding: 10px 20px
     }
 }
